@@ -1,0 +1,16 @@
+{
+	"FileVersion": 3,
+	"EngineAssociation": "{900A14DB-438B-BF67-6528-D18EE894F93F}",
+	"Category": "",
+	"Description": "",
+	"Modules": [
+		{
+			"Name": "LexUI_Project",
+			"Type": "Runtime",
+			"LoadingPhase": "Default",
+			"AdditionalDependencies": [
+				"CoreUObject"
+			]
+		}
+	]
+}
