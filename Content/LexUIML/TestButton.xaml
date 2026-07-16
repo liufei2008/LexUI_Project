@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LexUIML>
+    <Widget Name="RootCanvas"
+            VarName="RootCanvas"
+            Pivot="0.5,0.5"
+            AnchorMin="0,0"
+            AnchorMax="1,1"
+            AnchoredPosition="0,0"
+            SizeDelta="0,0"
+            RenderOpacity="1">
+
+        <!-- default slot-->
+        <Slot></Slot>
+
+        <Text Name="Text"
+                Font="DefaultFont"
+              Text="Button"
+              FontSize="16"
+              Color="#ff0000ff"
+              RenderOpacity="1"/>
+
+        <!-- named slot-->
+        <Slot Name="ContentSlot"></Slot>
+    </Widget>
+</LexUIML>

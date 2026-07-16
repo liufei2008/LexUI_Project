@@ -40,9 +40,8 @@ bld/
 
 # my custom
 Plugins/LGUI
-Source/
 Binaries/
-Assets/
+SrcAssets/
 
 # Visual Studo 2015 cache/options directory
 .vs/

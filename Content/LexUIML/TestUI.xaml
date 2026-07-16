@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LexUIML>
+
+  <Include Src="CommonStyles.xaml"/>
+
+  <PropertyGroup Name="FlexItem"
+                 LayoutSelf="FlexBox"
+                 LayoutSelf.PreferredWidth="100"
+                 LayoutSelf.PreferredHeight="50%"
+                 LayoutSelf.MinWidth="100"
+                 LayoutSelf.MinHeight="50"
+                 LayoutSelf.MaxWidth="200"
+                 LayoutSelf.MaxHeight="100"
+                 LayoutSelf.Grow="1"
+                 LayoutSelf.Shrink="1"
+                 LayoutSelf.Margin="0,0,0,0"/>
+
+  <PropertyGroup Name="IgnoreLayout"
+                 LayoutSelf="IgnoreLayoutContainer"/>
+
+  <Widget DisplayName="RootCanvas"
+          VarName="RootCanvas"
+          Pivot="0.5,0.5"
+          AnchorMin="0,0"
+          AnchorMax="1,1"
+          AnchoredPosition="0,0"
+          SizeDelta="0,0"
+          RenderOpacity="1">
+
+    <!-- Image: reference an ImageBrush from Resources -->
+    <Image DisplayName="BackgroundImage"
+           ImageBrush="BgTexture"
+           VarName="BgImage"
+           AnchorMin="0,0"
+           AnchorMax="1,1"
+           SizeDelta="0,0"/>
+
+    <!-- Text: title label with font and color -->
+    <Text DisplayName="TitleText"
+          Font="DefaultFont"
+          VarName="TitleText"
+          AnchoredPosition="0,200"
+          SizeDelta="400,60"
+          Text="Welcome to LexUI XAML"
+          FontSize="32"
+          Color="#ff0000ff"
+          RenderOpacity="1"/>
+
+    <!-- Sprite: player avatar with tint, marked with IdName for event reference -->
+    <Sprite DisplayName="AvatarSprite"
+            Sprite="IconSprite"
+            IdName="MySprite"
+            AnchoredPosition="0,80"
+            SizeDelta="128,128"
+            Color="255,255,255,200"
+            RenderOpacity="1"/>
+
+    <Widget DisplayName="LayoutContainer"
+            Style="FlexColumn"
+            Pivot="0.5,0.5"
+            AnchorMin="0.5,0.5"
+            AnchorMax="0.5,0.5"
+            AnchoredPosition="0,-40"
+            SizeDelta="400,200"
+            RenderOpacity="1">
+
+      <Sprite DisplayName="Item1"
+              Sprite="IconSprite"
+              Style="FlexItem"
+              Color="#00aa00ff"/>
+
+      <Sprite DisplayName="ContainerBackground"
+              Sprite="IconSprite"
+              Style="IgnoreLayout"
+              AnchorMin="0,0"
+              AnchorMax="1,1"
+              SizeDelta="0,0"
+              Color="#0000aaff"
+              RenderOpacity="0.5"/>
+
+    </Widget>
+
+    <!-- default slot-->
+    <Slot></Slot>
+
+    <!-- Button prefab with OnClick event + parameters, references MySprite by IdName -->
+    <Prefab Src="Button"
+            DisplayName="StartButton"
+            AnchoredPosition="0,-80"
+            SizeDelta="200,60"
+            Event:OnClick="OnStartClicked,1,test,IdName:MySprite"/>
+
+    <!-- Button template without parameter -->
+    <Template Src="Button"
+              DisplayName="SettingsButton"
+              VarName="SettingsButton"
+              AnchoredPosition="0,-160"
+              SizeDelta="200,60"
+              Event:OnClick="OnSettingsClicked">
+
+      <!-- Text node will be added to the default slot -->
+      <Text Font="DefaultFont"
+            Text="SlotText"
+            FontSize="16"
+            Color="#ff0000ff"
+            RenderOpacity="1"/>
+
+      <!-- Text node will be added to named slot-->
+      <Slot Src="ContentSlot">
+        <Text Font="DefaultFont"
+              Text="SlotText"
+              FontSize="16"
+              Color="#ff0000ff"
+              RenderOpacity="1"/>
+      </Slot>
+
+    </Template>
+
+    <!-- Texture: raw texture display -->
+    <Texture DisplayName="IconTexture"
+             Texture="IconTex"
+             AnchorMin="0,0"
+             AnchorMax="0,0"
+             AnchoredPosition="64,64"
+             SizeDelta="48,48"/>
+
+    <!-- Text node with FontSize and custom positioning -->
+    <Text DisplayName="VersionText"
+          Font="DefaultFont"
+          Pivot="0,1"
+          AnchorMin="0,1"
+          AnchorMax="0,1"
+          AnchoredPosition="16,-16"
+          SizeDelta="300,24"
+          Text="v1.0.0"
+          FontSize="14"
+          RenderOpacity="0.6"/>
+
+  </Widget>
+</LexUIML>

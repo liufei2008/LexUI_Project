@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LexUIML>
+
+  <PropertyGroup Name="FlexColumn"
+                 LayoutContainer="FlexBox"
+                 LayoutContainer.Direction="Vertical"
+                 LayoutContainer.Wrap="NoWrap"
+                 LayoutContainer.PrimaryAlignment="Center"
+                 LayoutContainer.SecondaryAlignment="Center"
+                 LayoutContainer.SecondaryLineAlignment="Center"
+                 LayoutContainer.WidthGap="0"
+                 LayoutContainer.HeightGap="0"
+                 LayoutContainer.Padding="0,0,0,0"/>
+
+</LexUIML>
