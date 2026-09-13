@@ -11,6 +11,7 @@ public class LexUI_ProjectTarget : TargetRules
 		WindowsPlatform.bEnableAddressSanitizer = true;
 		DefaultBuildSettings = BuildSettingsVersion.Latest;
 		LinkType = TargetLinkType.Monolithic;
+		// BuildEnvironment = TargetBuildEnvironment.Unique;
 		
 		ExtraModuleNames.Add("LexUI_Project");
 	}
